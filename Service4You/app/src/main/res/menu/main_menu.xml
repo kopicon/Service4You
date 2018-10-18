@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.boldi.daoapp.AdminActivities.MainMenuActivity"
+    >
+    <item
+        android:id="@+id/edit_porfile"
+        android:title="Profil Átírás"
+        android:icon="@mipmap/img_avatar2"
+        />
+    <item
+        android:id="@+id/history"
+        android:title="Elöző ajánlatok"
+        android:icon="@drawable/img_history"
+         />
+    <item
+        android:id="@+id/new_offer"
+        android:icon="@drawable/img_newoffer"
+        android:title="Heti Ajánlat"
+        />
+    <item
+        android:id="@+id/logout"
+        android:title="Kijelentkezés"
+        android:icon="@drawable/img_logout"
+        />
+</menu>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.EditProfileAvtivity"
+    android:background="@color/primaryRed">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme">
+
+        <RelativeLayout
+            android:id="@+id/relLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/toolbar_editprofile" />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <EditText
+        android:id="@+id/txt_surname_ed"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="Vezetéknév"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_middlename_ed" />
+
+    <EditText
+        android:id="@+id/txt_middlename_ed"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:hint="Keresztnév"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar" />
+
+    <EditText
+        android:id="@+id/txt_email_ed"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="Emial"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_surname_ed" />
+
+    <EditText
+        android:id="@+id/txt_username_ed"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="Felhasználónév"
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_email_ed" />
+
+    <EditText
+        android:id="@+id/txt_password_ed"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="Jelszó"
+        android:inputType="text|textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_username_ed" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Kérem válasszon avatart"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password_ed" />
+
+    <ImageButton
+        android:id="@+id/img_avatar1e"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_saveprof"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password_ed"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/img_avatar2" />
+
+    <ImageButton
+        android:id="@+id/img_avatare"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_saveprof"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password_ed"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/img_avatar1" />
+
+    <ImageButton
+        android:id="@+id/img_avatar2e"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_saveprof"
+        app:layout_constraintEnd_toStartOf="@+id/img_avatar3e"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password_ed"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/img_avatar3" />
+
+    <ImageButton
+        android:id="@+id/img_avatar3e"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_saveprof"
+        app:layout_constraintEnd_toStartOf="@+id/img_avatar4e"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password_ed"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/img_avatar5" />
+
+    <ImageButton
+        android:id="@+id/img_avatar4e"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_saveprof"
+        app:layout_constraintEnd_toStartOf="@+id/img_avatar5e"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password_ed"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/img_avatar4" />
+
+    <ImageButton
+        android:id="@+id/img_avatar5e"
+        android:layout_width="45dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password_ed"
+        app:srcCompat="@mipmap/img_avatar6" />
+
+    <Button
+        android:id="@+id/btn_saveprof"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/button_shape"
+        android:text="Mentés"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

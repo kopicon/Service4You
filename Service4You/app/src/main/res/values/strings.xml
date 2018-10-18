@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Service4You</string>
+    <string name="WelcomeHu">Egyedi, Szuperkedvezményes ajánlatok hetente, csak itt az alkalmazásban!</string>
+    <string name="nextHu">Tovább</string>
+    <string name="pwHu">Jelszó</string>
+    <string name="registerTextHU">Nincs fiokod semmi probléma!</string>
+    <string name="registerBtnHU">Regisztáció</string>
+    <string name="orHu">vagy</string>
+    <string name="weeklyDiscount">Heti Ajánlat</string>
+    <string name="historyHU">Korábbi ajánlatok</string>
+    <string name="mapsHu">Térkép</string>
+    <string name="welcome2HU">Üdvözlünk újra itt!</string>
+    <string name="title_activity_discount_detail">DiscountDetailActivity</string>
+    <string name="Dtitle">
+        FOGLALJON LE FÉLÁRON A 3 ÉJSZAKÁS HÉTKÖZNAPOS CSOMAGAJÁNLATOT A CEGLÉDI HOTEL AQURAELL****-BEN!
+    </string>
+    <string name="Dmassage">
+        A fenti csak alkalmazásunkból elérető egyedi kuponkódját adja meg a Hotel Aquarell honlapján a foglalás elküldés előtt( vagy Klikkeljen ide, és automatiksan hozzáadja a kódot a rendszer
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_edit_profile">EditProfileActivity</string>
+</resources>
