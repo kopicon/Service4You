@@ -69,20 +69,23 @@ public class EditProfileAvtivity extends AppCompatActivity {
                 String MidName = txtMidleName.getText().toString();
                 String Email = txtEmail.getText().toString();
                 String pw = Password.getText().toString();
-                cUser = new User(UserName,Email,pw,SurName,MidName,selectedAvatar);
-                FDB.collection("Users").document(fAuth.getCurrentUser().getUid()).set(cUser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Intent i = new Intent(EditProfileAvtivity.this, MainActivity.class);
-                        startActivity(i);
-                        EditProfileAvtivity.this.finish();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                       toastMassage("Valami elromlott Próbáld újra");
-                    }
-                });
+                if(!UserName.isEmpty() && !SurName.isEmpty() && !MidName.isEmpty() && !Email.isEmpty() && !pw.isEmpty()){
+                    cUser = new User(UserName,Email,pw,SurName,MidName,selectedAvatar);
+                    FDB.collection("Users").document(fAuth.getCurrentUser().getUid()).set(cUser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Intent i = new Intent(EditProfileAvtivity.this, MainActivity.class);
+                            startActivity(i);
+                            EditProfileAvtivity.this.finish();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            toastMassage("Valami elromlott Próbáld újra");
+                        }
+                    });
+                }else{ toastMassage("Ellenőrizze a mezőket");}
+
             }
         });
         imgBack = findViewById(R.id.ivBackArrow);

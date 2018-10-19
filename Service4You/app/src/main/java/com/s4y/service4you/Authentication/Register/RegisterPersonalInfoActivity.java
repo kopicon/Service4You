@@ -34,7 +34,7 @@ public class RegisterPersonalInfoActivity extends AppCompatActivity   {
     private EditText txtMiddlename;
 
     private TextView txtvBirthday;
-    
+
     private Button btnNext;
     private Button bdButton;
 

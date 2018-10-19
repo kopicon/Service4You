@@ -70,8 +70,8 @@ public class RegisterLoginInfoActivity extends AppCompatActivity {
 
     private int selectedAvatar = 0;
 
-    private SharedPreferences sharedPreferences;
-    private LocalDBHelper LDB;
+    private SharedPreferences LoginPrefs;
+    private SharedPreferences personalPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,20 +94,20 @@ public class RegisterLoginInfoActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         DB = FirebaseFirestore.getInstance();
 
-        sharedPreferences = getSharedPreferences("PersonalInfoLoginPref",MODE_PRIVATE);
-        Surname = sharedPreferences.getString("Surname","");
-        MiddleName = sharedPreferences.getString("MiddleName","");
-        BdYear = sharedPreferences.getInt("BdYear",0);
-        BdMonth = sharedPreferences.getInt("BdMonth",0);
-        BdDay = sharedPreferences.getInt("BdDay",0);
+        personalPrefs = getSharedPreferences("PersonalInfoLoginPref",MODE_PRIVATE);
+        Surname = personalPrefs.getString("Surname","");
+        MiddleName = personalPrefs.getString("MiddleName","");
+        BdYear = personalPrefs.getInt("BdYear",0);
+        BdMonth = personalPrefs.getInt("BdMonth",0);
+        BdDay = personalPrefs.getInt("BdDay",0);
 
 
         imgButtonControl();
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (txtUserName.getText().toString().equals("") || txtEmail.getText().toString().equals("") ||
-                        txtPassword.getText().toString().equals("") || txtPWagain.getText().toString().equals("")) {
+                if (txtUserName.getText().toString().equals("") && txtEmail.getText().toString().equals("") &&
+                        txtPassword.getText().toString().equals("") && txtPWagain.getText().toString().equals("")) {
                     toastMassage("Kérjük töltse ki az összes információt!");
                 }
 
@@ -118,9 +118,9 @@ public class RegisterLoginInfoActivity extends AppCompatActivity {
                 Date bdDate = new Date(BdYear,BdMonth,BdDay);
                 cUser = new User(UserName,Email,Password,Surname,MiddleName,bdDate,selectedAvatar);
 
-                sharedPreferences = getSharedPreferences("Login",MODE_PRIVATE);
-                final SharedPreferences.Editor editor = sharedPreferences.edit();
-
+                LoginPrefs = getSharedPreferences("Login",MODE_PRIVATE);
+                final SharedPreferences.Editor editor = LoginPrefs.edit();
+                final SharedPreferences.Editor editor2 = personalPrefs.edit();
                 if(!Password.equals(PWagain)) {
                     toastMassage("A jelszavak nem egyeznek meg!");
                 }else{
@@ -134,6 +134,12 @@ public class RegisterLoginInfoActivity extends AppCompatActivity {
                                 editor.putString("Email",Email);
                                 editor.putString("Password",Password);
                                 editor.apply();
+                                editor2.remove("Surname");
+                                editor2.remove("MiddleName");
+                                editor2.remove("BdYear");
+                                editor2.remove("BdMonth");
+                                editor2.remove("BdDay");
+                                editor2.apply();
                                 Intent i = new Intent(RegisterLoginInfoActivity.this, MainActivity.class);
                                 startActivity(i);
                                 RegisterLoginInfoActivity.this.finish();
